@@ -1,66 +1,131 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Practical Work №10: Developing a Chatbot
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## **Topic:**  
+Developing a chatbot.
 
-## About Laravel
+## **Objective:**  
+Learn to work with the REST API of a third-party chatbot service.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## **Short Theoretical Background**  
+This practical work focuses on utilizing Laravel to develop a Telegram chatbot. Laravel provides powerful tools for managing APIs, while the chatbot will interact with the Kitsu API to fetch data about anime. It will mimic the core functionalities of "MyAnimeList."
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+For more details, refer to the official [Laravel documentation](https://laravel.com/docs).
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## **Task Instructions**  
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. **Use Laravel Framework.**  
+   Set up and configure a Laravel project for the chatbot development.  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. **Develop a Telegram Chatbot.**  
+   Use a library such as [Telegraph](https://github.com/def-studio/telegraph) to simplify Telegram Bot API integration.
 
-## Laravel Sponsors
+3. **Create a 'MyAnimeList' Analog.**  
+   Implement the following features for the chatbot:  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+   - **3.1. View the list of all anime.**  
+     Retrieve and display anime data from the Kitsu API.  
 
-### Premium Partners
+   - **3.2. Filter Anime.**  
+     Allow filtering by specific attributes (e.g., genre, rating, popularity).  
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+   - **3.3. Search by Title or Other Attributes.**  
+     Enable users to search anime by title or other attributes such as release year, type, or score.  
 
-## Contributing
+   - **3.4. View Detailed Anime Information.**  
+     Provide a detailed description of the selected anime, including its title, synopsis, genre, and ratings.  
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   - **3.5. Add to a Favorites List with a Rating.**  
+     Let users add anime to a favorites list and assign a rating (similar to MyAnimeList).  
 
-## Code of Conduct
+   - **3.6. *(Optional)* Add Watch Status Flags.**  
+     Include flags such as "Watching," "Completed," "Dropped," etc., to categorize anime in the user's list.  
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   - **3.7. *(Optional)* Inline Mode Support.**  
+     Implement Telegram's inline mode for seamless interaction without opening chat windows.
 
-## Security Vulnerabilities
+4. **Use the Kitsu API as the Data Source.**  
+   Refer to the [Kitsu API Documentation](https://kitsu.docs.apiary.io/#introduction/authentication/refreshing-an-access-token) for details on how to authenticate and fetch anime data.  
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. **Integrate with Telegram Bot API.**  
+   Choose a library from the [Telegram Bot API libraries list](https://core.telegram.org/bots/samples). The recommended library is [Telegraph](https://github.com/def-studio/telegraph).
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## **Technologies Used**  
+- **Backend Framework:** Laravel  
+- **Chatbot Library:** Telegraph
+- **External API:** Kitsu API  
+
+---
+
+## **Steps to Complete the Task**
+
+1. **Project Setup:**  
+   - Create a new Laravel project:
+     ```bash
+     laravel new chatbot
+     cd chatbot
+     composer require defstudio/telegraph
+     ```
+   - Configure the .env file with the necessary Telegram Bot token.
+
+2. **Connect to the Kitsu API:**  
+   - Use Laravel's HTTP Client (`Http`) to fetch anime data from the Kitsu API.  
+   - Ensure you handle API authentication and pagination effectively.
+
+3. **Bot Command and Interaction Development:**  
+   - Define bot commands for viewing anime lists, searching, filtering, and adding to favorites.  
+   - Use Telegraph's message handling to interact with users.
+
+4. **Create the Features:**  
+   - Implement the core functionality (view list, filter, search, detailed view, etc.).  
+   - Extend functionality with optional watch status flags and inline mode if desired.  
+
+5. **Testing:**  
+   - Test the bot locally and ensure it responds to user commands correctly.  
+   - Deploy the bot and test it in a Telegram chat.
+
+---
+
+## **Installation**
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/Asdeire/animebot.git
+   cd chatbot
+   ```
+
+2. Install dependencies:  
+   ```bash
+   composer install
+   ```
+
+3. Set up the .env file with your Telegram Bot token and Kitsu API credentials.
+
+4. Run the application:  
+   ```bash
+   php artisan serve
+   ```
+
+---
+
+## **Usage**
+
+1. Add your bot to a Telegram chat.  
+2. Start the bot and use the commands to interact (e.g., `/list`, `/search`, `/add`, etc.).  
+
+---
+
+## **Contributing**
+
+Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
+
+---
+
+## **License**
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
